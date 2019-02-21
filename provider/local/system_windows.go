@@ -9,6 +9,10 @@ import (
 	"strings"
 )
 
+func (p *Provider) kubernetesPrepare() error {
+	return nil
+}
+
 func checkPermissions() error {
 	data, err := powershell(`([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")`)
 	if err != nil || strings.TrimSpace(string(data)) != "True" {

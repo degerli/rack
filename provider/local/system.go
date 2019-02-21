@@ -63,6 +63,10 @@ func (p *Provider) SystemInstall(w io.Writer, opts structs.SystemInstallOptions)
 		return "", err
 	}
 
+	if err := p.kubernetesPrepare(); err != nil {
+		return "", err
+	}
+
 	fmt.Fprintf(w, "OK\n")
 
 	fmt.Fprintf(w, "Waiting for rack... ")

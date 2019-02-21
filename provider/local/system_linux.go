@@ -10,6 +10,14 @@ import (
 	"github.com/convox/rack/pkg/helpers"
 )
 
+func (p *Provider) kubernetesPrepare() error {
+	if _, err := p.ApplyTemplate("microk8s", "", params); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func checkPermissions() error {
 	u, err := user.Current()
 	if err != nil {

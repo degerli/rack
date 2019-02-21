@@ -11,6 +11,10 @@ import (
 	"github.com/convox/rack/pkg/helpers"
 )
 
+func (p *Provider) kubernetesPrepare() error {
+	return nil
+}
+
 func checkPermissions() error {
 	u, err := user.Current()
 	if err != nil {
