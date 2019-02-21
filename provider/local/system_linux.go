@@ -11,7 +11,7 @@ import (
 )
 
 func (p *Provider) kubernetesPrepare() error {
-	if _, err := p.ApplyTemplate("microk8s", "", params); err != nil {
+	if _, err := p.ApplyTemplate("microk8s", "", nil); err != nil {
 		return err
 	}
 
