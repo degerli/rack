@@ -281,7 +281,7 @@ func volumeFrom(app, v string) string {
 
 func volumeName(v string) string {
 	hash := sha256.Sum256([]byte(v))
-	return fmt.Sprintf("volume-%x", hash[0:20])
+	return fmt.Sprintf("convox-volume-%x", hash[0:20])
 }
 
 func volumeSources(app string, vs []string) []string {
